@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: c13hiuvhi-nodejs-gitops
+  description: This is GitOps manifest for c13hiuvhi-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: c13hiuvhi-nodejs
+    janus-idp.io/tekton: c13hiuvhi-nodejs 
+    backstage.io/kubernetes-id: c13hiuvhi-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:c13hiuvhi-nodejs
